@@ -2,7 +2,7 @@
 using namespace std;
 
 int main(){
-    int a{0},b{0},q{0},r{0},gcd{69};
+    int a{0},b{0},q{0},r{0},gcd{0};
     //enter two numbers
     cout << "enter divident: ";
     cin >> a;
