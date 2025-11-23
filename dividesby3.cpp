@@ -2,14 +2,17 @@
 using namespace std;
 
 int main(){
-    int number,sum{0},i{1};
+    int number,sum{0};
     bool repeatLoop{false};
     cout << "Enter a number to see if its divisible by 3: ";
     cin >> number;
     
-    for(;!(number>=i && number<i*10);i = i*10);//finding highest power of ten
+    
     
     do{
+        int i{1};
+        for(;!(number>=i && number<i*10);i = i*10);//finding highest power of ten
+        
         while(i > 0){
             repeatLoop = false;
             sum += number/i;
@@ -19,6 +22,7 @@ int main(){
         cout << sum << endl;
         if(sum > 10){
             number = sum;
+            sum = 0;
             repeatLoop = true;
         }
     }while(repeatLoop);
