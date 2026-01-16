@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <string>
 using namespace std;
 
 vector<int> pascalsGenerator(int power,bool pastRows=false){
@@ -21,8 +22,17 @@ vector<int> pascalsGenerator(int power,bool pastRows=false){
 }
 int main(){
     int maxPower;
+    string yesorno;
+    
     cout << "what power do you wanna reach?: ";
     cin >>maxPower;
-    pascalsGenerator(maxPower,true);
+    cout<<"do you want to see all the columns?(anything other than yes will be considered no): ";
+    cin>>yesorno;
+    bool pastRows=(yesorno=="yes")?true:false;
+
+    for(int num : pascalsGenerator(maxPower,pastRows)){
+        cout<<num<<" ";
+    }
+    cout<<endl;
     return 0;
 }
